@@ -8,4 +8,5 @@ use Illuminate\Support\Facades\Schema;
 
 class Product extends Model
 {
+    protected $fillable = ['name', 'price', 'description'];
 }
