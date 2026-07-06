@@ -8,4 +8,5 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
+Route::patch('products/{product}/restore', [ProductController::class, 'restore'])->withTrashed();
 Route::apiResource('products', ProductController::class);

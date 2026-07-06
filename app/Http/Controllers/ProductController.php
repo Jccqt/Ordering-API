@@ -67,4 +67,11 @@ class ProductController extends Controller
 
         return response()->noContent();
     }
+
+    public function restore(Product $product)
+    {
+        $product->restore();
+
+        return new ProductResource($product);
+    }
 }
