@@ -74,4 +74,11 @@ class ProductController extends Controller
 
         return new ProductResource($product);
     }
+
+    public function search(string $keyword)
+    {
+        $products = Product::where('name', 'like', '%' . $keyword . '%')->get();
+
+        return ProductResource::collection($products);
+    }
 }
