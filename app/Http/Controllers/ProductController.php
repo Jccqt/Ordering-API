@@ -77,7 +77,7 @@ class ProductController extends Controller
 
     public function search(string $keyword)
     {
-        $products = Product::where('name', 'like', '%' . $keyword . '%')->get();
+        $products = Product::where('name', 'like', '%' . $keyword . '%')->paginate(10);
 
         return ProductResource::collection($products);
     }
